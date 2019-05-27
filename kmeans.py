@@ -77,6 +77,8 @@ while True:
             flip = 1
             if np.random.random() > 0.5:
                 flip = -1
+            # This is probably not the part of the original algirithm, but moving centroids around randomly
+            # helps them grasp a cluster and settle down in this case. Let me know if this is stupid. It worked for me, though. 
             cluster_mean = df.values[:, :4].mean(0) + np.random.rand(df.shape[1] - 2) * flip * 1.5
 
         if cluster_data.shape[0] != 0:
